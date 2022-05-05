@@ -5,7 +5,10 @@ pipeline {
             agent none 
             steps {
                 echo 'Hello, Maven'
-                echo "I am here"            }
+                echo "I am here"
+                def listing = sh script: 'ls -la /', returnStdout:true
+                echo "${listing}"
+            }
         }
         stage('Example Test') {
             agent none 
