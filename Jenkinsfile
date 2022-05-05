@@ -15,7 +15,7 @@ pipeline {
                 fi
                 ''',returnStdout:true)
         echo " I am here :${bool}"
-        if (bool="True"){
+        if (bool=="True"){
             echo "Mycode is working"
         else {
             echo "My code is not working"
