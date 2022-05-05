@@ -4,7 +4,7 @@ pipeline {
         stage('Check') {
     steps {        
         script {
-            Boolean bool = def bool = sh (script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",returnStatus: true) == 0
+            def bool = sh (script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",returnStatus: true) == 0
             if (bool) {
                 println "Operation is performed :)"
                 echo "This is the result:{bool}"
