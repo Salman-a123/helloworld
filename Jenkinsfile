@@ -4,9 +4,11 @@ pipeline {
         stage('Example Build') {
             agent none 
             steps {
-                def listing = sh script: 'ls -la /', returnStdout:true
-                echo "${listing}"
+                sh '''#!/bin/bash
+                 echo "hello world" 
+                '''
             }
+}
         }
         stage('Example Test') {
             agent none 
