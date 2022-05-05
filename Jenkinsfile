@@ -1,16 +1,15 @@
 pipeline {
-    agent any 
+    agent none 
     stages {
         stage('Example Build') {
-            agent any 
+            agent none 
             steps {
-                sh '''#!/bin/bash
-                echo "hello world" 
-                '''
+                def result=sh( 0==script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",returnStatus: true))
+                echo "Build full flag: ${result}"
             }
         }
         stage('Example Test') {
-            agent any
+            agent none 
             steps {
                 echo 'Hello, JDK'
                 
