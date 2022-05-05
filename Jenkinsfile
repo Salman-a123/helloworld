@@ -5,7 +5,6 @@ pipeline {
             agent none 
             steps {
                 result=sh(script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",returnStatus: true)
-                echo "Build full flag: ${result}"
             }
         }
         stage('Example Test') {
