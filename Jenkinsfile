@@ -14,7 +14,7 @@ pipeline {
                 ''')
             if (bool) {
                 println "Operation is performed :)"
-                echo "This is the result:{bool}"
+                echo "This is the result:${bool}"
             } else {
                 println "Operation is not performed :("
                 echo "This is the result:${bool}"
