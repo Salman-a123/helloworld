@@ -17,7 +17,7 @@ pipeline {
                 exit 1
                 fi
                 ''',returnStdout:true)
-        echo "${bool}"
+        echo " I am here :${bool}"
             
   } catch (Exception e) {
       echo 'Exception occurred: ' + e.toString()
