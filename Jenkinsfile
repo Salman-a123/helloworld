@@ -16,7 +16,7 @@ pipeline {
                 return 1
                 fi
                 ''',returnstatus:true)
-            if (bool=0) {
+            if (bool) {
                 println "The File exists :)"
             } else {
                 println "The File does not exist :("
