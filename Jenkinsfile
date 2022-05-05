@@ -4,7 +4,14 @@ pipeline {
         stage('Check') {
     steps {        
         script {
-            def bool = sh (script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",returnStatus: true) == 0
+            def bool = sh (script:
+                '''#!/bin/bash
+                STR='https://ioi-toolchain.vwgroup.com/jenkins/job/E3_ADM/job/SBX/job/Adnan/job/e3_comp_cryptolib/'
+                SUB='Stx'
+                if [[ "$STR" == *"$SUB"* ]]; then
+                echo "It's there."
+                fi
+                ''')
             if (bool) {
                 println "Operation is performed :)"
                 echo "This is the result:{bool}"
