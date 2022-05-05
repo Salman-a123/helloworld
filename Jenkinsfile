@@ -1,5 +1,5 @@
 pipeline {
-    agent none 
+    agent any 
     stages {
         stage('Check') {
     steps {        
@@ -14,7 +14,7 @@ pipeline {
     }
     }   
         stage('Example Test') {
-            agent none 
+            agent any 
             steps {
                 echo 'Hello, JDK'
                 
