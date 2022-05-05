@@ -15,6 +15,7 @@ pipeline {
                 fi
                 ''',returnStdout:true)
         echo " I am here :${bool}"
+      echo "Following is the type of variable: ${bool..getClass()}"
         if (bool=="True"){
             echo "Mycode is working"
         }
