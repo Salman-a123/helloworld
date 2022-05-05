@@ -5,10 +5,9 @@ pipeline {
             agent none 
             steps {
                 sh '''#!/bin/bash
-                 echo "hello world" 
+                echo "hello world" 
                 '''
             }
-}
         }
         stage('Example Test') {
             agent none 
