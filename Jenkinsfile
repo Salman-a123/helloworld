@@ -7,7 +7,7 @@ pipeline {
             def bool = sh (script:
                 '''#!/bin/bash
                 STR='https://ioi-toolchain.vwgroup.com/jenkins/job/E3_ADM/job/SBX/job/Adnan/job/e3_comp_cryptolib/'
-                SUB='Stx'
+                SUB='SBX'
                 if [[ "$STR" == *"$SUB"* ]]; 
                 then
                 exit 0
