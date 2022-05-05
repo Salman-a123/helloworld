@@ -1,8 +1,8 @@
 pipeline {
-    agent none 
+    agent any 
     stages {
         stage('Example Build') {
-            agent none 
+            agent any 
             steps {
                 sh '''#!/bin/bash
                 echo "hello world" 
@@ -10,7 +10,7 @@ pipeline {
             }
         }
         stage('Example Test') {
-            agent none 
+            agent any
             steps {
                 echo 'Hello, JDK'
                 
