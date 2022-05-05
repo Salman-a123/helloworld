@@ -11,7 +11,7 @@ pipeline {
                 if [[ "$STR" == *"$SUB"* ]]; then
                 echo "It's there."
                 fi
-                ''')
+                ''',returnstatus:true)
             if (bool) {
                 println "Operation is performed :)"
                 echo "This is the result:${bool}"
