@@ -11,10 +11,10 @@ pipeline {
                 SUB='SBX'
                 if [[ "$STR" == *"$SUB"* ]]; 
                 then
-                exit 0
+                echo "True"
                 else
                 # 1 = false
-                exit 1
+                echo "False" 
                 fi
                 ''',returnStdout:true)
         echo " I am here :${bool}"
