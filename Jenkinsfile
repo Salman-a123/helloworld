@@ -17,10 +17,11 @@ pipeline {
         echo " I am here :${bool}"
         if (bool=="True"){
             echo "Mycode is working"
+        }
         else {
             echo "My code is not working"
         }
-    }
+    
   } catch (Exception e) {
       echo 'Exception occurred: ' + e.toString()
       sh 'Handle the exception!'
