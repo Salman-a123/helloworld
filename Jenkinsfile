@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent none 
     stages {
         stage('Check') {
     steps {        
@@ -7,24 +7,25 @@ pipeline {
             def bool = sh (script:
                 '''#!/bin/bash
                 STR='https://ioi-toolchain.vwgroup.com/jenkins/job/E3_ADM/job/SBX/job/Adnan/job/e3_comp_cryptolib/'
-                SUB='STX'
-                echo "I am here"
-                if [[ "$STR" == *"$SUB"* ]]; then
-                echo "It's there."
+                SUB='Stx'
+                if [[ "$STR" == *"$SUB"* ]]; 
+                then
+                return 0
+                else
+                # 1 = false
+                return 1
                 fi
-                ''',returnStdout:true)
-            if (bool) {
-                println "Operation is performed :)"
-                echo "This is the result:${bool}"
+                ''',returnstatus:true)
+            if (bool=0) {
+                println "The File exists :)"
             } else {
-                println "Operation is not performed :("
-                echo "This is the result:${bool}"
+                println "The File does not exist :("
             }   
         }         
     }
     }   
         stage('Example Test') {
-            agent any 
+            agent none 
             steps {
                 echo 'Hello, JDK'
                 
