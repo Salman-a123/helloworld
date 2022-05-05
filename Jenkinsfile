@@ -4,7 +4,7 @@ pipeline {
         stage('Example Build') {
             agent none 
             steps {
-                result=sh(script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",returnStatus: true)
+                result=sh(script: """git log -1 --pretty=%B """,returnStatus: true)
             }
         }
         stage('Example Test') {
