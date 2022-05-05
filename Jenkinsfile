@@ -4,11 +4,12 @@ pipeline {
         stage('Check') {
     steps {        
         script {
-            Boolean bool = fileExists 'NewFile.txt'
+            Boolean bool = def bool = sh (script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",returnStatus: true) == 0
             if (bool) {
-                println "The File exists :)"
+                println "Operation is performed :)"
+                echo "This is the result:{bool}"
             } else {
-                println "The File does not exist :("
+                println "Operation is not performed :("
             }   
         }         
     }
