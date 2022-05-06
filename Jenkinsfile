@@ -7,7 +7,7 @@ pipeline {
   try {
         def URL='https://ioi-toolchain.vwgroup.com/jenkins/job/E3_ADM/job/SBX/job/Adnan/job/e3_comp_cryptolib/'
         def rint =URL.contains('job/SBX')
-        if(rnt.isFoo){
+        if(rint.isFoo){
             echo "Conditon is satsfied"
         }
         else{
