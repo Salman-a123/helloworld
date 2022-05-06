@@ -5,17 +5,15 @@ pipeline {
     steps {        
         script {
   try {
-      def bool = sh (script:
+      def bool = {0==sh (script:
                 '''#!/bin/bash
                 STR='https://ioi-toolchain.vwgroup.com/jenkins/job/E3_ADM/job/SBX/job/Adnan/job/e3_comp_cryptolib/'
                 SUB='SBX'
                 if [[ "$STR" == *"$SUB"* ]]; 
-                then
-                echo "True" 
+                then 
                 fi
-                ''',returnStdout:true)
+                ''',returnStatus:true)}
         echo " I am here :${bool}"
-      echo "Following is the type of variable: ${bool..getClass()}"
         if (bool=="True"){
             echo "Mycode is working"
         }
